@@ -8,7 +8,8 @@ const projects = [
     title: "Welth",
     subtitle: "AI Budget & Expense Platform",
     icon: Sparkles,
-    description: "AI-powered full-stack platform for system-driven budgeting and expense tracking, processing 1,000+ transactions with real-time financial insights.",
+    description:
+      "AI-powered full-stack platform for system-driven budgeting and expense tracking, processing 1,000+ transactions with real-time financial insights.",
     features: [
       "AI receipt scanning & smart categorization",
       "Real-time budget alerts & notifications",
@@ -18,12 +19,15 @@ const projects = [
     tech: ["React.js", "Node.js", "Tailwind CSS", "Supabase", "JavaScript"],
     date: "Aug 2025",
     color: "from-primary/20 to-primary/5",
+    liveUrl: "https://welth-rosy.vercel.app/",          // ✅ Vercel
+    githubUrl: "https://github.com/aatifkhan786/Welth",
   },
   {
     title: "HealthifymeAI",
     subtitle: "AI Wellness Platform",
     icon: Heart,
-    description: "AI-powered full-stack wellness platform supporting 10+ core features, enabling real-time diet tracking, nutrition analytics, and personalized fitness dashboards.",
+    description:
+      "AI-powered full-stack wellness platform supporting 10+ core features, enabling real-time diet tracking, nutrition analytics, and personalized fitness dashboards.",
     features: [
       "AI image-based food recognition",
       "Chat-driven health assistance",
@@ -33,12 +37,15 @@ const projects = [
     tech: ["React.js", "Node.js", "TypeScript", "Tailwind CSS", "Supabase"],
     date: "Apr 2025",
     color: "from-accent/20 to-accent/5",
+    liveUrl: "https://healthifyme-six.vercel.app/",  // ✅ Vercel
+    githubUrl: "https://github.com/aatifkhan786/HealthiFyMe-AI",
   },
   {
     title: "Contact Tracing App",
     subtitle: "Graph-Based Epidemic Monitoring",
     icon: Network,
-    description: "Intelligent contact-tracing system using graph-based algorithms to visualize up to 2-hop exposure networks across 100+ simulated users in real time.",
+    description:
+      "Intelligent contact-tracing system using graph-based algorithms to visualize up to 2-hop exposure networks across 100+ simulated users in real time.",
     features: [
       "Real-time exposure network visualization",
       "Dynamic risk propagation alerts",
@@ -48,8 +55,11 @@ const projects = [
     tech: ["Python", "Flask", "JavaScript", "C++", "HTML/CSS"],
     date: "Mar 2024",
     color: "from-cyan-500/20 to-cyan-500/5",
+    liveUrl: "https://github.com/aatifkhan786/contact-tracing-app",                               
+    githubUrl: "https://github.com/aatifkhan786/contact-tracing-app",
   },
 ];
+
 
 export const Projects = () => {
   return (
@@ -160,16 +170,38 @@ export const Projects = () => {
 
                     {/* Right Column */}
                     <div className="lg:w-1/3 flex flex-col justify-center items-start lg:items-end gap-4">
-                      <Button variant="neon-outline" size="lg" className="group/btn">
-                        <Github className="w-4 h-4" />
-                        View Code
-                        <ExternalLink className="w-4 h-4 opacity-0 -ml-2 group-hover/btn:opacity-100 group-hover/btn:ml-0 transition-all" />
-                      </Button>
-                      <Button variant="neon-ghost" size="lg" className="group/btn">
-                        Live Demo
-                        <ExternalLink className="w-4 h-4" />
-                      </Button>
-                    </div>
+
+  {/* View Code Button */}
+  <Button asChild variant="neon-outline" size="lg" className="group/btn">
+    <a
+      href={project.githubUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Github className="w-4 h-4" />
+      View Code
+      <ExternalLink className="w-4 h-4 opacity-0 -ml-2 group-hover/btn:opacity-100 group-hover/btn:ml-0 transition-all" />
+    </a>
+  </Button>
+
+  {/* Live Demo / Repository Button */}
+  {project.liveUrl && (
+    <Button asChild variant="neon-ghost" size="lg" className="group/btn">
+      <a
+        href={project.liveUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {project.liveUrl.includes("github.com")
+          ? "View Repository"
+          : "Live Demo"}
+        <ExternalLink className="w-4 h-4" />
+      </a>
+    </Button>
+  )}
+
+</div>
+
                   </div>
                 </div>
               </motion.div>
