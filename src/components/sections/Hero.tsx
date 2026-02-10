@@ -138,7 +138,7 @@ export const Hero = () => {
             View Projects
           </MagneticButton>
           <MagneticButton variant="neon-outline" size="xl" asChild>
-            <a href="#contact">
+            <a href="https://drive.google.com/file/d/1l5JjP7LL9wC_tIH1x5q3JZ0QeJoxW0xV/view?usp=sharing">
               <Download className="w-5 h-5" />
               Download Resume
             </a>
