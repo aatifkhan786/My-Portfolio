@@ -8,7 +8,6 @@ const education = [
     institution: "Lovely Professional University",
     degree: "Bachelor of Technology",
     field: "Computer Science and Engineering",
-    grade: "CGPA: 7.13",
     location: "Jalandhar, Punjab",
     period: "Aug 2023 - Present",
     current: true,
